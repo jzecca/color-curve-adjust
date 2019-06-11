@@ -1,4 +1,7 @@
-# color-curve-adjust [![Build Status](https://travis-ci.org/zed-k/color-curve-adjust.svg?branch=master)](https://travis-ci.org/zed-k/color-curve-adjust)
+# color-curve-adjust
+
+[![Build Status](https://travis-ci.org/zed-k/color-curve-adjust.svg?branch=master)](https://travis-ci.org/zed-k/color-curve-adjust)
+[![Coverage Status](https://img.shields.io/coveralls/github/zed-k/color-curve-adjust/master.svg)](https://coveralls.io/github/zed-k/color-curve-adjust?branch=master)
 
 > Performs a Photoshop/GIMP curve adjustment on a RGB color
 
