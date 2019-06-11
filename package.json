@@ -10,7 +10,7 @@
   },
   "scripts": {
     "coverage": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest"
   },
   "keywords": [
