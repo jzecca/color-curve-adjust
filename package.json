@@ -1,0 +1,29 @@
+{
+  "name": "color-curve-adjust",
+  "version": "1.0.0",
+  "description": "Performs a Photoshop/GIMP curve adjustment on a RGB color",
+  "license": "MIT",
+  "repository": "zed-k/color-curve-adjust",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
+  "keywords": [
+    "color",
+    "curve",
+    "adjust",
+    "photoshop",
+    "gimp"
+  ],
+  "dependencies": {
+    "hex-rgb": "^4.1.0",
+    "rgb-hex": "^3.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
