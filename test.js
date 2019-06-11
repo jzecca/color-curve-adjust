@@ -30,12 +30,11 @@ describe('curveAdjust', () => {
         { x: 255, y: 255 },
     ];
 
-    test.todo('hex');
-// test('curveAdjust', () => {
-//     expect(curveAdjust('#5a2149', curve)).toBe('#9d6b8d');
-//     expect(curveAdjust('#040700', curve)).toBe('#585955');
-//     expect(curveAdjust('#ead184', curve)).toBe('#f5e9c2');
-//     expect(curveAdjust('#9c6d02', curve)).toBe('#d2af56');
-//     expect(curveAdjust('#6e921b', curve)).toBe('#b0cc67');
-// });
+    test('hex', () => {
+        expect(curveAdjust('#5a2149', curve)).toBe('#9d6b8d');
+        expect(curveAdjust('#040700', curve)).toBe('#585955');
+        expect(curveAdjust('#ead184', curve)).toBe('#f5e9c2');
+        expect(curveAdjust('#9c6d02', curve)).toBe('#d2af56');
+        expect(curveAdjust('#6e921b', curve)).toBe('#b0cc67');
+    });
 });

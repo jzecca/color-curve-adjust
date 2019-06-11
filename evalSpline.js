@@ -1,8 +1,8 @@
 /**
  * Creates a matrix filled with zeroes.
  *
- * @param {number} r  Rows
- * @param {number} c  Columns
+ * @param {number} r - Rows count
+ * @param {number} c - Columns count
  * @returns {number[][]}
  */
 const zeroesMatrix = (r, c) => Array(r).fill(0).map(() => Array(c).fill(0));
@@ -14,7 +14,7 @@ const zeroesMatrix = (r, c) => Array(r).fill(0).map(() => Array(c).fill(0));
  * @param {number[][]} A
  * @returns {number[]}
  */
-const gaussJordanSolve = A => {
+function gaussJordanSolve(A) {
     const m = A.length;
 
     for (let k = 0; k < m; k++) {  // columns
@@ -54,16 +54,16 @@ const gaussJordanSolve = A => {
     }
 
     return x;
-};
+}
 
 /**
  * Generates spline derivatives.
  *
- * @param {number[]} xs  Array of X values
- * @param {number[]} ys  Array of Y values
+ * @param {number[]} xs - Array of X values
+ * @param {number[]} ys - Array of Y values
  * @returns {number[]}
  */
-const getNaturalKs = (xs, ys) => {
+function getNaturalKs(xs, ys) {
     const n = xs.length - 1;
     const A = zeroesMatrix(n + 1, n + 2);
 
@@ -83,17 +83,17 @@ const getNaturalKs = (xs, ys) => {
     A[n][n + 1] = 3 * (ys[n] - ys[n - 1]) / ((xs[n] - xs[n - 1]) * (xs[n] - xs[n - 1]));
 
     return gaussJordanSolve(A);
-};
+}
 
 /**
  * Interpolates between discrete values using a cubic spline.
  *
- * @param {number}   x   Point to evaluate
- * @param {number[]} xs  Array of X values
- * @param {number[]} ys  Array of Y values
+ * @param {number}   x  - Point to evaluate
+ * @param {number[]} xs - Array of X values
+ * @param {number[]} ys - Array of Y values
  * @returns {number}
  */
-const evalSpline = (x, xs, ys) => {
+function evalSpline(x, xs, ys) {
     let i = 1;
     while (xs[i] < x) {
         i++;
@@ -106,6 +106,6 @@ const evalSpline = (x, xs, ys) => {
     const b = -ks[i]     * (xs[i] - xs[i - 1]) + (ys[i] - ys[i - 1]);
 
     return (1 - t) * ys[i - 1] + t * ys[i] + t * (1 - t) * (a * (1 - t) + b * t);
-};
+}
 
 module.exports = evalSpline;
