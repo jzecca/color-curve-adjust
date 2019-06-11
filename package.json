@@ -10,6 +10,7 @@
   },
   "scripts": {
     "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "jest"
   },
   "keywords": [
@@ -24,6 +25,7 @@
     "rgb-hex": "^3.0.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.4",
     "jest": "^24.8.0"
   }
 }
