@@ -2,6 +2,9 @@
 
 > Performs a Photoshop/GIMP curve adjustment on a RGB color
 
+Based on [CSPL.js](https://github.com/kuckir/CSPL.js).
+Read more about the algorithm [here](http://blog.ivank.net/interpolation-with-cubic-splines.html).
+
 ## Install
 
 ```
