@@ -18,7 +18,7 @@ $ npm install color-curve-adjust
 
 - Edit your curve in Photoshop
 
-    ![Photoshop curve](sample.png)
+    ![Photoshop curve](test.png)
 
 - Create an array of each point of the curve
 
@@ -37,8 +37,17 @@ $ npm install color-curve-adjust
     ```js
     const curveAdjust = require('color-curve-adjust');
 
-    curveAdjust('#5a2149', curve);
+    curveAdjust.rgb('#5a2149', curve);
     //=> '#9d6b8d'
+
+    curveAdjust.red('#5a2149', curve);
+    //=> '#9d2149'
+
+    curveAdjust.green('#5a2149', curve);
+    //=> '#5a6b49'
+
+    curveAdjust.blue('#5a2149', curve);
+    //=> '#5a218d'
     ```
 
 ## License
