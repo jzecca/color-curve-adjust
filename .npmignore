@@ -1,4 +1,5 @@
 .idea/
 .gitattributes
 .travis.yml
-sample*
+*.png
+*.psd
