@@ -1,6 +1,6 @@
 {
   "name": "color-curve-adjust",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "Performs a Photoshop/GIMP curve adjustment on a RGB color",
   "license": "MIT",
   "repository": "jzecca/color-curve-adjust",
