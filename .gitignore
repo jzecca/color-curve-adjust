@@ -1,3 +1,5 @@
-node_modules/
-npm-debug.log*
+.parcel-cache
 coverage/
+dist/
+node_modules/
+yarn-error.log*

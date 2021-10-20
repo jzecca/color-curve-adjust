@@ -3,15 +3,13 @@
   "version": "2.0.0",
   "description": "Performs a Photoshop/GIMP curve adjustment on a RGB color",
   "license": "MIT",
-  "repository": "zed-k/color-curve-adjust",
-  "main": "index.js",
+  "repository": "jzecca/color-curve-adjust",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "engines": {
-    "node": ">=6"
-  },
-  "scripts": {
-    "coverage": "jest --coverage",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test": "jest"
+    "node": ">=12"
   },
   "keywords": [
     "color",
@@ -21,11 +19,34 @@
     "gimp"
   ],
   "dependencies": {
-    "hex-rgb": "^4.1.0",
+    "hex-rgb": "^4.3.0",
     "rgb-hex": "^3.0.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.4",
-    "jest": "^24.8.0"
+    "@parcel/packager-ts": "^2.0.0",
+    "@parcel/transformer-typescript-tsc": "^2.0.0",
+    "@parcel/transformer-typescript-types": "^2.0.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.0.0",
+    "coveralls": "^3.1.0",
+    "jest": "^27.3.0",
+    "parcel": "^2.0.0",
+    "ts-jest": "^27.0.0",
+    "typescript": "^4.4.0"
+  },
+  "scripts": {
+    "build": "parcel build src/index.ts",
+    "watch": "parcel watch",
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "rootDir": "src",
+    "coverageDirectory": "../coverage",
+    "coverageReporters": [
+      "json"
+    ],
+    "testEnvironment": "node"
   }
 }
