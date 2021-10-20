@@ -1,5 +1,9 @@
+.github/
 .idea/
-.gitattributes
+.parcel-cache/
+coverage/
+.parcelrc
 .travis.yml
+.tsconfig.json
 *.png
 *.psd

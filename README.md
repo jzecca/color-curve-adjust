@@ -1,7 +1,7 @@
 # color-curve-adjust
 
-[![Build Status](https://travis-ci.org/zed-k/color-curve-adjust.svg?branch=master)](https://travis-ci.org/zed-k/color-curve-adjust)
-[![Coverage Status](https://img.shields.io/coveralls/github/zed-k/color-curve-adjust/master.svg)](https://coveralls.io/github/zed-k/color-curve-adjust?branch=master)
+[![Build Status](https://img.shields.io/github/workflow/status/jzecca/color-curve-adjust/CI?logo=github&style=flat-square)](https://github.com/jzecca/color-curve-adjust/actions/workflows/ci.yaml)
+[![Coverage](https://img.shields.io/codecov/c/gh/jzecca/color-curve-adjust?logo=codecov&style=flat-square)](https://codecov.io/gh/jzecca/color-curve-adjust)
 
 > Performs a Photoshop/GIMP curve adjustment on a RGB color
 
@@ -18,11 +18,11 @@ $ npm install color-curve-adjust
 
 - Edit your curve in Photoshop
 
-    ![Photoshop curve](test.png)
+    ![Photoshop curve](example.png)
 
 - Create an array of each point of the curve
 
-    ```js
+    ```ts
     const curve = [
         { x: 0, y: 85 },
         { x: 50, y: 120 },
@@ -34,20 +34,17 @@ $ npm install color-curve-adjust
 
 - Import the module and call it with a color and your array
 
-    ```js
-    const curveAdjust = require('color-curve-adjust');
+    ```ts
+    import curveAdjust from 'color-curve-adjust';
 
-    curveAdjust.rgb('#5a2149', curve);
+    curveAdjust('#5a2149', curve);
     //=> '#9d6b8d'
 
-    curveAdjust.red('#5a2149', curve);
+    curveAdjust('#5a2149', curve, 'r');   // adjust only the red channel
     //=> '#9d2149'
-
-    curveAdjust.green('#5a2149', curve);
-    //=> '#5a6b49'
-
-    curveAdjust.blue('#5a2149', curve);
-    //=> '#5a218d'
+  
+    curveAdjust('#5a2149', curve, 'gb');  // adjust only green & blue channels
+    //=> '#5a6b8d'
     ```
 
 ## License

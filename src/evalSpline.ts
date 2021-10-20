@@ -1,20 +1,15 @@
 /**
  * Creates a matrix filled with zeroes.
- *
- * @param {number} r - Rows count
- * @param {number} c - Columns count
- * @returns {number[][]}
  */
-const zeroesMatrix = (r, c) => Array(r).fill(0).map(() => Array(c).fill(0));
+function zeroesMatrix(rows: number, columns: number): number[][] {
+    return Array(rows).fill(0).map(() => Array(columns).fill(0));
+}
 
 /**
  * Solves linear equation by Gauss-Jordan elimination.
  * https://en.wikipedia.org/wiki/Gaussian_elimination
- *
- * @param {number[][]} A
- * @returns {number[]}
  */
-function gaussJordanSolve(A) {
+function gaussJordanSolve(A: number[][]): number[] {
     const m = A.length;
 
     for (let k = 0; k < m; k++) {  // columns
@@ -58,12 +53,8 @@ function gaussJordanSolve(A) {
 
 /**
  * Generates spline derivatives.
- *
- * @param {number[]} xs - Array of X values
- * @param {number[]} ys - Array of Y values
- * @returns {number[]}
  */
-function getNaturalKs(xs, ys) {
+function getNaturalKs(xs: number[], ys: number[]): number[] {
     const n = xs.length - 1;
     const A = zeroesMatrix(n + 1, n + 2);
 
@@ -87,13 +78,8 @@ function getNaturalKs(xs, ys) {
 
 /**
  * Interpolates between discrete values using a cubic spline.
- *
- * @param {number}   x  - Point to evaluate
- * @param {number[]} xs - Array of X values
- * @param {number[]} ys - Array of Y values
- * @returns {number}
  */
-function evalSpline(x, xs, ys) {
+export default function evalSpline(x: number, xs: number[], ys: number[]): number {
     let i = 1;
     while (xs[i] < x) {
         i++;
@@ -107,5 +93,3 @@ function evalSpline(x, xs, ys) {
 
     return (1 - t) * ys[i - 1] + t * ys[i] + t * (1 - t) * (a * (1 - t) + b * t);
 }
-
-module.exports = evalSpline;
